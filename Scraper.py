@@ -4,6 +4,21 @@ import pyautogui
 import time
 import pyperclip
 
+
+
+#Indiana
+#http://www.icrimewatch.net/results.php?AgencyID=54663&SubmitNameSearch=1&OfndrCity=
+#Indianapolis
+#&OfndrLast=&OfndrFirst=&level=&AllCity=&altaddr=home_addr&excludeIncarcerated=0&
+#page=76
+
+
+
+
+
+
+
+
 def removeBlankPages(dir):
 
     arr = os.listdir(dir)
@@ -74,7 +89,6 @@ def LookupandSaveHTML(id):
     pyautogui.moveTo(599, 111)
     pyautogui.doubleClick()
     pyautogui.press('backspace')
-    pyautogui.hotkey('ctrl','v')
     pyautogui.press('enter')
     time.sleep(2)
     pyautogui.hotkey('ctrl','s')
@@ -107,14 +121,29 @@ def getImages():
         reader = csv.reader(f)
         #size = list
 
+        #1553850
+        
+        
         for i in reader:#turns reader into a iterable list
+            #print(len(i))
+            q = i.index('1553850')
             for j in range(len(i)):#iterates through the cell rows
+                #print(len(i))
+                j = j + q
                 LookupandSaveHTML(i[j])
 
 
 
 
-time.sleep(3)
+#time.sleep(3)
 
 
-getImages()
+#getImages()
+
+
+#http://www.isp.state.il.us/sor/offenderdetails.cfm?SORID=E17B6303&CFID=154221021&CFTOKEN=7e50730cdfeb1bf0-6C9C44D8-EFE5-5C6F-50B8CC622D624AD4&jsessionid=ec30ac2a4c96b0f0d8447323f604161b91b7
+#http://www.isp.state.il.us/sor/offenderdetails.cfm?SORID=E17B2548&CFID=154221021&CFTOKEN=7e50730cdfeb1bf0-6C9C44D8-EFE5-5C6F-50B8CC622D624AD4&jsessionid=ec30ac2a4c96b0f0d8447323f604161b91b7
+
+#time.sleep(3)
+#LookupandSaveHTML("1553850")
+#LookupandSaveHTML('1537785')
