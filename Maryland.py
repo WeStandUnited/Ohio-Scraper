@@ -18,7 +18,10 @@ def ScrapePage():
 
         for i in content:
             print(i.strip())
-            AutoClicker(i.strip(),GetLastIndex(i.strip()))
+
+            index = GetLastIndex(i.strip())
+
+            AutoClicker(i.strip(),index)
 
 
 
@@ -76,6 +79,9 @@ def AutoClicker(County,LastIndex):
 
     while Indexref != -9:
 
+
+
+
         pyautogui.moveTo(500, 110)
 
         pyperclip.copy('http://www.dpscs.state.md.us/sorSearch/search.do?anchor=offlist&searchType=byCounty&coords=0%2B0&streetAddress=&radius=0.25&firstnm=&lastnm=&county='+County+'&zip=&filter=ALL&category=ALL&start='+str(Indexref))
@@ -94,7 +100,7 @@ def AutoClicker(County,LastIndex):
 
         pyautogui.moveTo(1025, 630)
 
-        time.sleep(3)
+        time.sleep(10)
 
         pyautogui.hotkey('ctrl','s')
 
@@ -113,7 +119,7 @@ def AutoClicker(County,LastIndex):
 
         time.sleep(3)
 
-        Indexref = Indexref - 10
+        Indexref = int(Indexref) - 10
 
 
 
@@ -121,4 +127,4 @@ def AutoClicker(County,LastIndex):
 time.sleep(2)
 #GetLastIndex("Allegany")
 #AutoClicker('Allegany',161)
-ScrapePage()
+ScrapePage()    
