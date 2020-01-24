@@ -124,7 +124,24 @@ def AutoClicker(County,LastIndex):
 
 
 
-time.sleep(2)
+def MoveImages(dirName,MvDir):
+    listOfFile = os.walk(dirName)
+    for i in listOfFile:
+            print(i[0])
+            for j in i:
+                for u in j:
+                    if '.jpg' in u:
+                        print(u)
+                        os.system('mv '+i[0]+'/'+u+' '+MvDir)
+
+
+
+
+
+
+
+#time.sleep(2)
 #GetLastIndex("Allegany")
 #AutoClicker('Allegany',161)
-ScrapePage()    
+#ScrapePage()
+MoveImages('/home/cj/HTML/')
