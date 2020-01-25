@@ -23,6 +23,23 @@ def ParseHTML(directory):#TODO edit this script use bs4 to
 
     links = set()
     
+    with open(directory,'r')as f:
+        soup = BeautifulSoup(f, 'html.parser')
+
+        #print(soup.prettify())
+        #find figure tag
+
+        #get all instnces a <a href= "Some String we want"...</a>
+
+        #(eg)<a href="https://www.offenderradar.com/offender-details/jimmy-ray-odom-of-california-146613" target="_blank">
+
+        #put it in the set
+        mod = list(soup.find_all('figure'))
+
+        print(mod[1])
+
+
+
 
 
     return links
@@ -55,3 +72,4 @@ def getImages():
 
 
 
+ParseHTML('/home/cj/CaliTest/1')
